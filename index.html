@@ -14,10 +14,52 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-B0EFbFUk.js"></script>
-    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-vh5v1MtY.css">
+    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-Cm06fWnV.js"></script>
+    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-D8JP0Ulw.css">
   </head>
   <body>
+    <!--templates-->
+    <template id="product-template">
+      <article
+        class="bg-no-repeat bg-center bg-cover rounded-lg overflow-hidden hover:shadow-lg hover:scale-105 transition-all relative group cursor-pointer h-72 lg:h-full"
+        id="article-product"
+      >
+        <div
+          class="w-full h-full absolute bg-white/50 transition-all group-hover:bg-transparent"
+          id="bg-product"
+        ></div>
+        <header
+          class="absolute group-hover:top-5 top-[-100px] z-10 transition-all px-5"
+          id="header-product"
+        >
+          <h2 class="text-white font-bold text-4xl m-0 p-0" id="title-product">
+            {{title}}
+          </h2>
+          <small class="text-white/70 m-0 p-0" id="description-product"
+            >{{description}}</small
+          >
+        </header>
+      </article>
+    </template>
+
+    <template id="button-text-icon-template">
+      <button
+        class="bg-black h-10 rounded-lg flex flex-row gap-x-2 items-center justify-center px-4 hover:bg-white group transition-all w-max"
+        id="button-text-icon"
+      >
+        <p
+          class="text-white group-hover:text-black font-bold"
+          id="button-text-icon-text"
+        ></p>
+        <i
+          class="!text-xl !text-white group-hover:!text-black"
+          id="button-text-icon-icon"
+        ></i>
+      </button>
+    </template>
+
+    <!-- fin templates -->
+
     <main>
       <!--heroe section-->
       <section
@@ -47,7 +89,8 @@
 
         <!-- menu -->
         <nav
-          class="sticky top-0 left-0 w-full h-20 flex justify-between items-center px-10 z-50"
+          class="fixed top-0 left-0 w-full h-20 flex justify-between items-center px-10 z-50 transition-all"
+          id="nav-menu"
           aria-label="nav menu"
         >
           <!-- logo -->
@@ -70,7 +113,7 @@
           <!-- menu items  -->
           <div class="flex gap-x-10 items-center" aria-label="menu container">
             <ul
-              class="flex gap-x-2 bg-black/90 backdrop-blur absolute top-0 left-0 w-full h-screen z-50 flex-col items-center justify-center gap-y-10 transition-all translate-x-[100%] duration-500 md:!translate-x-0 md:bg-transparent md:backdrop-blur-none md:flex-row md:relative"
+              class="flex gap-x-2 bg-black/90 backdrop-blur absolute top-0 left-0 w-full h-screen z-50 flex-col items-center justify-center gap-y-10 transition-all translate-x-[100%] duration-500 md:!translate-x-0 md:bg-transparent md:backdrop-blur-none md:flex-row md:relative md:transition-none"
               aria-label="menu"
               id="menu"
             >
@@ -87,19 +130,19 @@
               </button>
               <li aria-label="menu item">
                 <a
-                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl md:text-base"
+                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl md:text-base hover:underline hover:underline-offset-4"
                   >PRODUCT</a
                 >
               </li>
               <li aria-label="menu item">
                 <a
-                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl md:text-base"
+                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl md:text-base hover:underline hover:underline-offset-4"
                   >PRICES</a
                 >
               </li>
               <li aria-label="menu item">
                 <a
-                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl md:text-base"
+                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl md:text-base hover:underline hover:underline-offset-4"
                   >INSTALLATION</a
                 >
               </li>
@@ -107,7 +150,7 @@
             <!--icon menu-->
             <button
               id="open-menu"
-              class="hover:bg-white/20 hover:backdrop-blur rounded-full transition-all block md:hidden"
+              class="hover:bg-white/20 hover:backdrop-blur rounded-full transition-all block md:hidden w-12 h-12"
               aria-label="icon menu open"
             >
               <i
@@ -119,19 +162,27 @@
           </div>
         </nav>
         <div
-          class="absolute bottom-0 self-center mb-20 p-4 backdrop-blur bg-white/10 rounded-lg z-20"
+          class="absolute bottom-0 self-center mb-10 p-4 backdrop-blur bg-white/10 rounded-lg z-20 shadow"
         >
           <div
             class="w-full h-full flex flex-col gap-y-2 items-center z-20"
             aria-label="box to order the product in case it is in a valid country"
+            id="geo-data"
           >
-            <p class="text-white text-center" id="geo-data">loading...</p>
-            <button
-              class="px-4 py-2 bg-white rounded-lg font-bold text-sm hover:bg-black hover:text-white hover:cursor-pointer transition-all active:scale-95"
-            >
-              ORDER NOW
-            </button>
+            <p
+              id="geo-data-text"
+              aria-label="if your location is correct, will be shown in this paragraph"
+              class="text-white text-center"
+            ></p>
           </div>
+        </div>
+      </section>
+      <section class="w-full">
+        <div class="max-w-[1100px] m-auto py-10 px-5" aria-label="wrapper">
+          <div
+            class="w-full h-min lg:h-96 grid lg:grid-cols-3 lg:grid-rows-1 gap-x-4 grid-rows-3 grid-cols-1 gap-y-5 lg:gap-y-0"
+            id="list-products-container"
+          ></div>
         </div>
       </section>
     </main>
