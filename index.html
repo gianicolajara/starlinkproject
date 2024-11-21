@@ -14,8 +14,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-9-ZfSPGV.js"></script>
-    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-BP1f3R6H.css">
+    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-D45Qz0uv.js"></script>
+    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-JYR0YKHE.css">
   </head>
   <body>
     <!--templates-->
@@ -87,10 +87,27 @@
         </div>
       </article>
     </template>
-
     <!-- fin templates -->
 
     <main>
+      <!-- modal multiuse -->
+      <aside
+        id="modal"
+        class="z-[9999999] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden fixed"
+      >
+        <button
+          class="absolute right-0 top-0 m-5"
+          id="close-modal"
+          aria-label="menu icon close"
+        >
+          <i
+            class="fa fa-close text-white cursor-pointer p-3"
+            style="font-size: 25px"
+            aria-label="menu icon close"
+          ></i>
+        </button>
+      </aside>
+
       <!--heroe section-->
       <section
         class="w-full lg:h-[90vh] h-screen relative bg-[url('/media/images/heroe-phone.jpg')] bg-center bg-cover bg-no-repeat lg:bg-none flex flex-col justify-between z-10"
@@ -230,16 +247,18 @@
       <section class="w-full">
         <div class="max-w-[1100px] m-auto py-10 px-5" aria-label="wrapper">
           <header class="mb-5">
-            <h2 class="text-4xl font-bold">Prices</h2>
+            <h2 class="text-4xl font-bold">PRICES</h2>
           </header>
 
-          <div class="w-full h-full border-2 rounded-lg shadow mb-7">
-            <table class="table-fixed w-full caption-bottom">
+          <div class="relative border-2 rounded-lg shadow mb-7 overflow-x-auto">
+            <table class="w-full caption-bottom">
               <caption class="text-sm p-2 text-left">
                 *Our prices are subject to change depending on the region.
               </caption>
-              <thead class="p-5 uppercase border-b-2 bg-gray-100 text-sm">
-                <tr>
+              <thead
+                class="p-5 uppercase border-b-2 bg-gray-100 text-sm w-full"
+              >
+                <tr class="w-full">
                   <th class="px-6 py-3">Name Package</th>
                   <th class="px-6 py-3">Speed</th>
                   <th class="px-6 py-3">Price</th>
@@ -253,6 +272,42 @@
             class="w-full grid grid-cols-1 grid-rows-3 gap-y-7"
             id="prices-elements-container"
           ></div>
+        </div>
+      </section>
+
+      <!-- installation -->
+      <section class="w-full">
+        <div class="max-w-[1100px] m-auto py-10 px-5" aria-label="wrapper">
+          <header class="mb-5">
+            <h2 class="text-4xl font-bold">INSTALLATION</h2>
+          </header>
+
+          <article
+            class="grid grid-cols-1 grid-rows-[1fr,_auto] lg:grid-cols-[2fr,_1fr] lg:grid-rows-1 lg:gap-x-10 gap-y-5"
+          >
+            <div
+              class="w-full h-full rounded-lg overflow-hidden relative flex cursor-pointer transition-all lg:hover:scale-105"
+              id="installation-container-video"
+            >
+              <img
+                src="https://gianicolajara.github.io/starlinkproject/media/images/installation.jpg"
+                alt="video about installation starlink modem"
+                class="object-cover w-full h-full block"
+              />
+              <i
+                class="fa fa-play !text-white !text-5xl absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              ></i>
+            </div>
+            <div class="w-full h-full flex flex-col justify-center">
+              <header class="mb-4">
+                <h3 class="text-3xl font-bold">Quick Start Video</h3>
+              </header>
+              <p>
+                A simple tutorial to start using your starlink system, remember
+                to have a clear sky to be able to do the installation.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
     </main>
