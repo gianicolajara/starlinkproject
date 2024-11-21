@@ -14,27 +14,27 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-YA0qgg-e.js"></script>
-    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-DbH4L8K8.css">
+    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-9-ZfSPGV.js"></script>
+    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-BP1f3R6H.css">
   </head>
   <body>
     <!--templates-->
     <template id="product-template">
       <article
-        class="bg-no-repeat bg-center bg-cover rounded-lg overflow-hidden hover:shadow-lg hover:scale-105 transition-all relative group cursor-pointer h-72 lg:h-full"
+        class="bg-no-repeat bg-center bg-cover rounded-lg overflow-hidden lg:hover:shadow-lg lg:hover:scale-105 transition-all relative group lg:cursor-pointer h-72 lg:h-full"
         id="article-product"
       >
         <div
-          class="w-full h-full absolute bg-white/50 transition-all group-hover:bg-transparent"
+          class="w-full h-full absolute bg-white/50 transition-all group-hover:bg-transparent hidden lg:flex"
           id="bg-product"
         ></div>
         <header
-          class="absolute group-hover:top-5 top-[-100px] z-10 transition-all px-5"
+          class="absolute lg:group-hover:top-5 lg:top-[-100px] z-[5] transition-all px-5 pt-5 lg:pt-0"
           id="header-product"
         >
-          <h2 class="text-white font-bold text-4xl m-0 p-0" id="title-product">
+          <h3 class="text-white font-bold text-4xl m-0 p-0" id="title-product">
             {{title}}
-          </h2>
+          </h3>
           <small class="text-white/70 m-0 p-0" id="description-product"
             >{{description}}</small
           >
@@ -56,6 +56,36 @@
           id="button-text-icon-icon"
         ></i>
       </button>
+    </template>
+
+    <template id="price-element-template">
+      <article
+        class="grid grid-cols-1 grid-rows-[auto,_1fr] lg:grid-cols-2 lg:grid-rows-1 gap-x-10 gap-y-5"
+      >
+        <div
+          class="w-full h-full rounded-lg overflow-hidden shadow"
+          id="price-element-img-container"
+        >
+          <img
+            src="https://gianicolajara.github.io/starlinkproject/media/images/middle.jpg"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            id="price-element-img"
+          />
+        </div>
+        <div class="flex flex-col justify-center order-3 lg:order-1">
+          <header class="mb-2">
+            <h3 class="text-xl font-bold" id="price-element-title">
+              {{title}}
+            </h3>
+          </header>
+          <p class="mb-2" id="price-element-description">{{description}}</p>
+          <ul
+            class="list-disc p-0 m-0 list-inside flex flex-col gap-y-2"
+            id="price-element-list"
+          ></ul>
+        </div>
+      </article>
     </template>
 
     <!-- fin templates -->
@@ -145,19 +175,19 @@
               </button>
               <li aria-label="menu item">
                 <a
-                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-base hover:underline hover:underline-offset-4"
-                  >PRODUCT</a
+                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-sm hover:underline hover:underline-offset-4"
+                  >ABOUT</a
                 >
               </li>
               <li aria-label="menu item">
                 <a
-                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-base hover:underline hover:underline-offset-4"
+                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-sm hover:underline hover:underline-offset-4"
                   >PRICES</a
                 >
               </li>
               <li aria-label="menu item">
                 <a
-                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-base hover:underline hover:underline-offset-4"
+                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-sm hover:underline hover:underline-offset-4"
                   >INSTALLATION</a
                 >
               </li>
@@ -176,6 +206,7 @@
             </button>
           </div>
         </nav>
+        <!-- box with your location -->
         <div
           class="absolute bottom-0 self-center mb-10 p-4 backdrop-blur bg-white/10 rounded-lg z-20 shadow mx-4"
         >
@@ -183,20 +214,44 @@
             class="w-full h-full flex flex-col gap-y-2 items-center z-20"
             aria-label="box to order the product in case it is in a valid country"
             id="geo-data"
-          >
-            <p
-              id="geo-data-text"
-              aria-label="if your location is correct, will be shown in this paragraph"
-              class="text-white text-center text-sm lg:text-base"
-            ></p>
-          </div>
+          ></div>
         </div>
       </section>
+      <!-- about -->
       <section class="w-full">
         <div class="max-w-[1100px] m-auto py-10 px-5" aria-label="wrapper">
           <div
             class="w-full h-min lg:h-96 grid lg:grid-cols-3 lg:grid-rows-1 gap-x-4 grid-rows-3 grid-cols-1 gap-y-5 lg:gap-y-0"
             id="list-products-container"
+          ></div>
+        </div>
+      </section>
+      <!-- prices -->
+      <section class="w-full">
+        <div class="max-w-[1100px] m-auto py-10 px-5" aria-label="wrapper">
+          <header class="mb-5">
+            <h2 class="text-4xl font-bold">Prices</h2>
+          </header>
+
+          <div class="w-full h-full border-2 rounded-lg shadow mb-7">
+            <table class="table-fixed w-full caption-bottom">
+              <caption class="text-sm p-2 text-left">
+                *Our prices are subject to change depending on the region.
+              </caption>
+              <thead class="p-5 uppercase border-b-2 bg-gray-100 text-sm">
+                <tr>
+                  <th class="px-6 py-3">Name Package</th>
+                  <th class="px-6 py-3">Speed</th>
+                  <th class="px-6 py-3">Price</th>
+                </tr>
+              </thead>
+              <tbody class="" id="prices-table-body"></tbody>
+            </table>
+          </div>
+
+          <div
+            class="w-full grid grid-cols-1 grid-rows-3 gap-y-7"
+            id="prices-elements-container"
           ></div>
         </div>
       </section>
