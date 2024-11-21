@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,10 +14,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-hH3f_nuY.js"></script>
-    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-CnFR9yOC.css">
+    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-BkEou1xg.js"></script>
+    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-BJ7Ug2rT.css">
   </head>
-  <body>
+  <body class="dark:bg-neutral-950">
     <!--templates-->
     <template id="product-template">
       <article
@@ -25,7 +25,7 @@
         id="article-product"
       >
         <div
-          class="w-full h-full absolute bg-white/50 transition-all group-hover:bg-transparent hidden lg:flex"
+          class="w-full h-full absolute bg-white/50 transition-all group-hover:bg-transparent hidden lg:flex dark:bg-black/30"
           id="bg-product"
         ></div>
         <header
@@ -75,13 +75,18 @@
         </div>
         <div class="flex flex-col lg:justify-center order-3 lg:order-1">
           <header class="mb-2">
-            <h3 class="text-xl font-bold" id="price-element-title">
+            <h3
+              class="text-xl font-bold dark:text-white"
+              id="price-element-title"
+            >
               {{title}}
             </h3>
           </header>
-          <p class="mb-2" id="price-element-description">{{description}}</p>
+          <p class="mb-2 dark:text-neutral-400" id="price-element-description">
+            {{description}}
+          </p>
           <ul
-            class="list-disc p-0 m-0 list-inside flex flex-col gap-y-2"
+            class="list-disc p-0 m-0 list-inside flex flex-col gap-y-2 dark:text-neutral-400"
             id="price-element-list"
           ></ul>
         </div>
@@ -161,10 +166,13 @@
           </picture>
 
           <!-- menu items  -->
-          <div class="flex gap-x-5 items-center" aria-label="menu container">
+          <div
+            class="flex justify-center items-center"
+            aria-label="menu container"
+          >
             <!-- weather -->
             <div
-              class="flex gap-x-2 w-full items-center"
+              class="flex gap-x-2 w-full items-center justify-center"
               id="weather-container"
             >
               <p
@@ -175,7 +183,7 @@
               <img id="weather-image" class="w-7 h-7 hidden" loading="lazy" />
             </div>
             <ul
-              class="flex gap-x-2 bg-black/90 backdrop-blur absolute top-0 left-0 w-full h-screen z-50 flex-col items-center justify-center gap-y-10 transition-all translate-x-[100%] duration-500 lg:!translate-x-0 lg:bg-transparent lg:backdrop-blur-none lg:flex-row lg:relative lg:transition-none"
+              class="flex gap-x-2 bg-black/90 backdrop-blur absolute top-0 left-0 w-full lg:h-full h-screen z-50 flex-col items-center justify-center gap-y-10 transition-all translate-x-[100%] duration-500 lg:!translate-x-0 lg:bg-transparent lg:backdrop-blur-none lg:flex-row lg:relative lg:transition-none"
               aria-label="menu"
               id="menu"
             >
@@ -193,34 +201,52 @@
               <li aria-label="menu item">
                 <a
                   class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-sm hover:underline hover:underline-offset-4"
+                  href="#about"
+                  id="menu-item"
                   >ABOUT</a
                 >
               </li>
               <li aria-label="menu item">
                 <a
                   class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-sm hover:underline hover:underline-offset-4"
+                  href="#prices"
+                  id="menu-item"
                   >PRICES</a
                 >
               </li>
               <li aria-label="menu item">
                 <a
                   class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-sm hover:underline hover:underline-offset-4"
+                  href="#installation"
+                  id="menu-item"
                   >INSTALLATION</a
                 >
               </li>
             </ul>
             <!--icon menu-->
-            <button
-              id="open-menu"
-              class="hover:bg-white/20 hover:backdrop-blur rounded-full transition-all block lg:hidden w-12 h-12"
-              aria-label="icon menu open"
-            >
-              <i
-                class="fa fa-bars text-white cursor-pointer p-3"
-                style="font-size: 25px"
-                aria-label="menu icon"
-              ></i>
-            </button>
+            <div class="flex gap-x-1">
+              <button
+                id="dark-mode-button"
+                class="hover:bg-white/20 hover:backdrop-blur rounded-full transition-all w-12 h-12"
+                aria-label="button dark mode"
+              >
+                <i
+                  class="fa fa-moon-o !text-xl !text-white cursor-pointer"
+                  id="dark-mode-icon"
+                  aria-label="dark mode icon"
+                ></i>
+              </button>
+              <button
+                id="open-menu"
+                class="hover:bg-white/20 hover:backdrop-blur rounded-full transition-all block lg:hidden w-12 h-12"
+                aria-label="icon menu open"
+              >
+                <i
+                  class="fa fa-bars !text-xl !text-white cursor-pointer"
+                  aria-label="menu icon"
+                ></i>
+              </button>
+            </div>
           </div>
         </nav>
         <!-- box with your location -->
@@ -235,10 +261,10 @@
         </div>
       </section>
       <!-- about -->
-      <section class="w-full">
-        <div class="max-w-[1100px] m-auto py-10 px-5" aria-label="wrapper">
+      <section class="w-full py-20" id="about">
+        <div class="max-w-[1100px] m-auto px-5" aria-label="wrapper">
           <header class="mb-5">
-            <h2 class="text-4xl font-bold">ABOUT</h2>
+            <h2 class="text-4xl font-bold dark:text-white">ABOUT</h2>
           </header>
 
           <div
@@ -248,24 +274,31 @@
         </div>
       </section>
       <!-- prices -->
-      <section class="w-full">
-        <div class="max-w-[1100px] m-auto py-10 px-5" aria-label="wrapper">
+      <section
+        class="w-full py-20 bg-neutral-100 dark:bg-neutral-900"
+        id="prices"
+      >
+        <div class="max-w-[1100px] m-auto px-5" aria-label="wrapper">
           <header class="mb-5">
-            <h2 class="text-4xl font-bold">PRICES</h2>
+            <h2 class="text-4xl font-bold dark:text-white">PRICES</h2>
           </header>
 
-          <div class="relative border-2 rounded-lg shadow mb-7 overflow-x-auto">
+          <div
+            class="relative border-2 dark:border-neutral-600 rounded-lg shadow mb-7 overflow-x-auto"
+          >
             <table class="w-full caption-bottom">
-              <caption class="text-sm p-2 text-left">
+              <caption
+                class="text-sm p-2 text-left dark:text-neutral-300 dark:bg-neutral-600"
+              >
                 *Our prices are subject to change depending on the region.
               </caption>
               <thead
-                class="p-5 uppercase border-b-2 bg-gray-100 text-sm w-full"
+                class="p-5 uppercase border-b-2 bg-gray-100 dark:bg-neutral-600 dark:border-neutral-500 text-sm w-full"
               >
                 <tr class="w-full">
-                  <th class="px-6 py-3">Name Package</th>
-                  <th class="px-6 py-3">Speed</th>
-                  <th class="px-6 py-3">Price</th>
+                  <th class="px-6 py-3 dark:text-neutral-400">Name Package</th>
+                  <th class="px-6 py-3 dark:text-neutral-400">Speed</th>
+                  <th class="px-6 py-3 dark:text-neutral-400">Price</th>
                 </tr>
               </thead>
               <tbody class="" id="prices-table-body"></tbody>
@@ -280,10 +313,10 @@
       </section>
 
       <!-- installation -->
-      <section class="w-full">
-        <div class="max-w-[1100px] m-auto py-10 px-5" aria-label="wrapper">
+      <section class="w-full py-20" id="installation">
+        <div class="max-w-[1100px] m-auto px-5" aria-label="wrapper">
           <header class="mb-5">
-            <h2 class="text-4xl font-bold">INSTALLATION</h2>
+            <h2 class="text-4xl font-bold dark:text-white">INSTALLATION</h2>
           </header>
 
           <article
@@ -304,9 +337,11 @@
             </div>
             <div class="w-full h-full flex flex-col justify-center">
               <header class="mb-4">
-                <h3 class="text-3xl font-bold">Quick Start Video</h3>
+                <h3 class="text-3xl font-bold dark:text-white">
+                  Quick Start Video
+                </h3>
               </header>
-              <p>
+              <p class="dark:text-neutral-400">
                 A simple tutorial to start using your starlink system, remember
                 to have a clear sky to be able to do the installation.
               </p>
