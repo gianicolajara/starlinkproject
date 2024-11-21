@@ -14,8 +14,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-Cm06fWnV.js"></script>
-    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-D8JP0Ulw.css">
+    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-iWBUnZaL.js"></script>
+    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-DbH4L8K8.css">
   </head>
   <body>
     <!--templates-->
@@ -63,14 +63,17 @@
     <main>
       <!--heroe section-->
       <section
-        class="w-full h-screen relative bg-[url('/media/images/heroe-phone.jpg')] bg-center bg-cover bg-no-repeat md:bg-none flex flex-col justify-between z-10"
+        class="w-full lg:h-[90vh] h-screen relative bg-[url('/media/images/heroe-phone.jpg')] bg-center bg-cover bg-no-repeat lg:bg-none flex flex-col justify-between z-10"
         aria-label="page's heroe"
       >
         <div
           class="absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-60%] z-30 text-center transition-all duration-500"
           id="title"
         >
-          <h1 class="text-white font-bold text-6xl" aria-label="main title">
+          <h1
+            class="text-white font-bold text-5xl lg:text-6xl"
+            aria-label="main title"
+          >
             HIGH-SPEED INTERNET AROUND THE WORLD
           </h1>
         </div>
@@ -80,7 +83,7 @@
           autoplay="true"
           muted="true"
           loop="true"
-          class="w-full h-full object-cover absolute top-0 left-0 hidden md:block"
+          class="w-full h-full object-cover absolute top-0 left-0 hidden lg:block"
           id="heroe-video"
         >
           <source src="https://gianicolajara.github.io/starlinkproject/media/heroe.mp4" type="video/mp4" />
@@ -89,7 +92,7 @@
 
         <!-- menu -->
         <nav
-          class="fixed top-0 left-0 w-full h-20 flex justify-between items-center px-10 z-50 transition-all"
+          class="fixed top-0 left-0 w-full h-20 flex justify-between items-center px-4 lg:px-10 z-50 transition-all"
           id="nav-menu"
           aria-label="nav menu"
         >
@@ -111,14 +114,26 @@
           </picture>
 
           <!-- menu items  -->
-          <div class="flex gap-x-10 items-center" aria-label="menu container">
+          <div class="flex gap-x-5 items-center" aria-label="menu container">
+            <!-- weather -->
+            <div
+              class="flex gap-x-2 w-full items-center"
+              id="weather-container"
+            >
+              <p
+                class="text-white font-bold hidden lg:inline text-sm"
+                id="weather-city"
+              ></p>
+              <p class="text-white text-sm" id="weather-temperature"></p>
+              <img id="weather-image" class="w-7 h-7 hidden" loading="lazy" />
+            </div>
             <ul
-              class="flex gap-x-2 bg-black/90 backdrop-blur absolute top-0 left-0 w-full h-screen z-50 flex-col items-center justify-center gap-y-10 transition-all translate-x-[100%] duration-500 md:!translate-x-0 md:bg-transparent md:backdrop-blur-none md:flex-row md:relative md:transition-none"
+              class="flex gap-x-2 bg-black/90 backdrop-blur absolute top-0 left-0 w-full h-screen z-50 flex-col items-center justify-center gap-y-10 transition-all translate-x-[100%] duration-500 lg:!translate-x-0 lg:bg-transparent lg:backdrop-blur-none lg:flex-row lg:relative lg:transition-none"
               aria-label="menu"
               id="menu"
             >
               <button
-                class="z-50 absolute right-0 top-0 m-5 md:hidden block"
+                class="z-50 absolute right-0 top-0 m-5 lg:hidden block"
                 id="close-menu"
                 aria-label="menu icon close"
               >
@@ -130,19 +145,19 @@
               </button>
               <li aria-label="menu item">
                 <a
-                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl md:text-base hover:underline hover:underline-offset-4"
+                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-base hover:underline hover:underline-offset-4"
                   >PRODUCT</a
                 >
               </li>
               <li aria-label="menu item">
                 <a
-                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl md:text-base hover:underline hover:underline-offset-4"
+                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-base hover:underline hover:underline-offset-4"
                   >PRICES</a
                 >
               </li>
               <li aria-label="menu item">
                 <a
-                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl md:text-base hover:underline hover:underline-offset-4"
+                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-base hover:underline hover:underline-offset-4"
                   >INSTALLATION</a
                 >
               </li>
@@ -150,7 +165,7 @@
             <!--icon menu-->
             <button
               id="open-menu"
-              class="hover:bg-white/20 hover:backdrop-blur rounded-full transition-all block md:hidden w-12 h-12"
+              class="hover:bg-white/20 hover:backdrop-blur rounded-full transition-all block lg:hidden w-12 h-12"
               aria-label="icon menu open"
             >
               <i
@@ -162,7 +177,7 @@
           </div>
         </nav>
         <div
-          class="absolute bottom-0 self-center mb-10 p-4 backdrop-blur bg-white/10 rounded-lg z-20 shadow"
+          class="absolute bottom-0 self-center mb-10 p-4 backdrop-blur bg-white/10 rounded-lg z-20 shadow mx-4"
         >
           <div
             class="w-full h-full flex flex-col gap-y-2 items-center z-20"
@@ -172,7 +187,7 @@
             <p
               id="geo-data-text"
               aria-label="if your location is correct, will be shown in this paragraph"
-              class="text-white text-center"
+              class="text-white text-center text-sm lg:text-base"
             ></p>
           </div>
         </div>
