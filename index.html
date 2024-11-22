@@ -14,8 +14,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-CAzn0cSG.js"></script>
-    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-BJ7Ug2rT.css">
+    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-DjmocZ3J.js"></script>
+    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-CLrLpT7u.css">
   </head>
   <body class="dark:bg-neutral-950">
     <!--templates-->
@@ -91,6 +91,36 @@
           ></ul>
         </div>
       </article>
+    </template>
+
+    <template id="order-now-form-template">
+      <div class="flex flex-col gap-y-2 w-full h-full p-5">
+        <header>
+          <h3 class="text-2xl font-bold dark:text-white">Order Now</h3>
+        </header>
+        <form id="order-now-form" class="flex flex-col gap-y-2 w-full h-full">
+          <input
+            type="Address"
+            name="address"
+            placeholder="Address"
+            required
+            class="rounded-lg py-2 px-4 border-2 border-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:border-neutral-500"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            class="rounded-lg py-2 px-4 border-2 border-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:border-neutral-500"
+          />
+          <button
+            type="submit"
+            class="dark:text-black dark:bg-white p-2 rounded-lg font-bold dark:hover:bg-black dark:hover:text-white transition-all active:scale-95 bg-black hover:text-black hover:bg-white text-white border-2 border-black"
+          >
+            Send Information
+          </button>
+        </form>
+      </div>
     </template>
     <!-- fin templates -->
 
@@ -172,11 +202,11 @@
           >
             <!-- weather -->
             <div
-              class="flex gap-x-2 w-full items-center justify-center"
+              class="gap-x-2 w-full items-center justify-center hidden lg:flex"
               id="weather-container"
             >
               <p
-                class="text-white font-bold hidden lg:inline text-sm"
+                class="text-white font-bold inline text-sm"
                 id="weather-city"
               ></p>
               <p class="text-white text-sm" id="weather-temperature"></p>
@@ -349,6 +379,98 @@
           </article>
         </div>
       </section>
+      <footer class="w-full bg-neutral-800 py-10">
+        <div class="max-w-[1100px] m-auto px-5" aria-label="wrapper">
+          <div
+            class="w-full grid grid-rows-[repeat(3,_auto)] grid-cols-1 lg:grid-cols-3 lg:grid-rows-1 gap-y-10"
+          >
+            <div class="w-full flex justify-center lg:justify-start">
+              <picture aria-label="starlink's logo">
+                <source
+                  media="(max-width: 768px)"
+                  srcset="https://gianicolajara.github.io/starlinkproject/media/svg/logo-phone.svg"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="https://gianicolajara.github.io/starlinkproject/media/images/logo.png"
+                />
+                <img
+                  src="https://gianicolajara.github.io/starlinkproject/media/images/logo.png"
+                  alt="starlink's logo"
+                  class="h-16"
+                />
+              </picture>
+            </div>
+            <div class="w-full flex-col flex items-center lg:items-start">
+              <header>
+                <h4 class="text-white">Links</h4>
+              </header>
+              <ul class="">
+                <li>
+                  <a
+                    href="#about"
+                    class="text-neutral-400 hover:text-white transition-all hover:underline text-sm"
+                    >About</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#prices"
+                    class="text-neutral-400 hover:text-white transition-all hover:underline text-sm"
+                    >Prices</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#installation"
+                    class="text-neutral-400 hover:text-white transition-all hover:underline text-sm"
+                    >Installation</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="w-full flex-col flex items-center lg:items-start">
+              <header>
+                <h4 class="text-white">Newsletter</h4>
+              </header>
+              <form id="form-newsletter">
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  required
+                  class="rounded-lg py-2 px-4 bg-neutral-700 text-neutral-300"
+                />
+                <datalist id="email">
+                  <option value="1">gianicolajara@gmail.com</option>
+                </datalist>
+                <button
+                  type="submit"
+                  class="bg-white p-2 rounded-lg font-bold hover:bg-black hover:text-white transition-all active:scale-95"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+          <hr class="border-0 border-t-2 border-neutral-700 my-4" />
+          <div>
+            <p class="text-neutral-400 text-center lg:text-left">
+              This is an educational site
+            </p>
+            <p class="text-neutral-400 text-center lg:text-left">
+              Created by
+              <a
+                href="https://github.com/gianicolajara"
+                target="_blank"
+                class="hover:text-blue-600 hover:underline"
+                >Gianicola Jara</a
+              >
+            </p>
+          </div>
+        </div>
+      </footer>
     </main>
 
   </body>
