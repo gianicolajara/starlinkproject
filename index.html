@@ -50,8 +50,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-94vwfB4-.js"></script>
-    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-8FVJgQvN.css">
+    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-Dz_-6DuM.js"></script>
+    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-BaEeYFBN.css">
   </head>
   <body class="dark:bg-neutral-950">
     <!--templates-->
@@ -68,9 +68,9 @@
           class="absolute lg:group-hover:top-5 lg:top-[-100px] z-[5] transition-all px-5 pt-5 lg:pt-0"
           id="header-product"
         >
-          <h3 class="text-white font-bold text-4xl m-0 p-0" id="title-product">
+          <p class="text-white font-bold text-4xl m-0 p-0" id="title-product">
             {{title}}
-          </h3>
+          </p>
           <small class="text-white/70 m-0 p-0" id="description-product"
             >{{description}}</small
           >
@@ -231,6 +231,7 @@
             <img
               src="https://gianicolajara.github.io/starlinkproject/media/images/logo.webp"
               alt="starlink's logo"
+              aria-label="starlink's logo"
               loading="lazy"
               class="h-12 md:h-16"
             />
@@ -251,11 +252,11 @@
                 class="text-white text-xs whitespace-nowrap"
                 id="weather-temperature"
               ></p>
-              <img id="weather-image" class="w-7 h-7 hidden" loading="lazy" />
             </div>
             <ul
               class="flex gap-x-2 bg-black/95 backdrop-blur absolute top-0 left-0 w-full lg:h-full h-screen z-50 flex-col items-center justify-center gap-y-10 transition-all translate-x-[100%] duration-500 lg:!translate-x-0 lg:bg-transparent lg:backdrop-blur-none lg:flex-row lg:relative lg:transition-none"
               id="menu"
+              role="list"
             >
               <button
                 class="z-50 absolute right-0 top-0 m-5 lg:hidden block"
@@ -269,7 +270,7 @@
                   aria-label="menu icon close"
                 ></i>
               </button>
-              <li aria-label="menu item">
+              <li aria-label="menu item about" role="listitem">
                 <a
                   class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-sm hover:underline hover:underline-offset-4"
                   href="#about"
@@ -277,19 +278,21 @@
                   >ABOUT</a
                 >
               </li>
-              <li aria-label="menu item">
+              <li aria-label="menu item prices">
                 <a
                   class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-sm hover:underline hover:underline-offset-4"
                   href="#prices"
                   id="menu-item"
+                  role="listitem"
                   >PRICES</a
                 >
               </li>
-              <li aria-label="menu item">
+              <li aria-label="menu item installation">
                 <a
                   class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-sm hover:underline hover:underline-offset-4"
                   href="#installation"
                   id="menu-item"
+                  role="listitem"
                   >INSTALLATION</a
                 >
               </li>
