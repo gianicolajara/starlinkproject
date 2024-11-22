@@ -2,7 +2,43 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="website for UNET's full-stack course" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Gianicola Jara Panichella" />
+    <meta name="title" content="STARLINK UNET PROJECT" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      property="og:url"
+      content="https://gianicolajara.github.io/starlinkproject"
+    />
+    <meta
+      property="og:image"
+      content="https://gianicolajara.github.io/starlinkproject/media/images/heroe-phone.webp"
+    />
+    <meta
+      property="og:description"
+      content="website for UNET's full-stack course"
+    />
+    <meta property="og:title" content="STARLINK UNET PROJECT" />
+    <meta property="og:site_name" content="Starlink" />
+    <meta
+      property="og:see_also"
+      content="https://gianicolajara.github.io/starlinkproject"
+    />
+    <meta name="twitter:card" content="website for UNET's full-stack course" />
+    <meta
+      name="twitter:url"
+      content="https://gianicolajara.github.io/starlinkproject"
+    />
+    <meta name="twitter:title" content="STARLINK UNET PROJECT" />
+    <meta
+      name="twitter:description"
+      content="website for UNET's full-stack course"
+    />
+    <meta
+      name="twitter:image"
+      content="https://gianicolajara.github.io/starlinkproject/media/images/heroe-phone.webp"
+    />
     <title>Starlink UNET Project</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,8 +50,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-DWiUymE1.js"></script>
-    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-vwud9ypT.css">
+    <script type="module" crossorigin src="https://gianicolajara.github.io/starlinkproject/assets/index-94vwfB4-.js"></script>
+    <link rel="stylesheet" crossorigin href="https://gianicolajara.github.io/starlinkproject/assets/index-8FVJgQvN.css">
   </head>
   <body class="dark:bg-neutral-950">
     <!--templates-->
@@ -46,6 +82,7 @@
       <button
         class="bg-black h-10 rounded-lg flex flex-row gap-x-2 items-center justify-center px-4 hover:bg-white group transition-all w-max"
         id="button-text-icon"
+        role="button"
       >
         <p
           class="text-white group-hover:text-black font-bold"
@@ -67,7 +104,7 @@
           id="price-element-img-container"
         >
           <img
-            src="https://gianicolajara.github.io/starlinkproject/media/images/middle.jpg"
+            src="https://gianicolajara.github.io/starlinkproject/media/images/middle.webp"
             loading="lazy"
             id="price-element-img"
             class="w-full h-full object-cover"
@@ -87,6 +124,7 @@
           </p>
           <ul
             class="list-disc p-0 m-0 list-inside flex flex-col gap-y-2 dark:text-neutral-400"
+            role="listitem"
             id="price-element-list"
           ></ul>
         </div>
@@ -115,6 +153,7 @@
           />
           <button
             type="submit"
+            role="button"
             class="dark:text-black dark:bg-white p-2 rounded-lg font-bold dark:hover:bg-black dark:hover:text-white transition-all active:scale-95 bg-black hover:text-black hover:bg-white text-white border-2 border-black"
           >
             Send Information
@@ -134,6 +173,7 @@
           class="absolute right-0 top-0 m-5"
           id="close-modal"
           aria-label="menu icon close"
+          role="button"
         >
           <i
             class="fa fa-close text-white cursor-pointer p-3"
@@ -145,7 +185,7 @@
 
       <!--heroe section-->
       <section
-        class="w-full lg:h-[90vh] h-screen relative bg-[url('/media/images/heroe-phone.jpg')] bg-center bg-cover bg-no-repeat lg:bg-none flex flex-col justify-between z-10"
+        class="w-full lg:h-[90vh] h-screen relative bg-[url('/media/images/heroe-phone.webp')] bg-center bg-cover bg-no-repeat lg:bg-none flex flex-col justify-between z-10"
         aria-label="page's heroe"
       >
         <div
@@ -183,15 +223,18 @@
             <source
               media="(max-width: 768px)"
               srcset="https://gianicolajara.github.io/starlinkproject/media/svg/logo-phone.svg"
+              aria-label="main logo of the website for phones"
             />
             <source
               media="(min-width: 768px)"
-              srcset="https://gianicolajara.github.io/starlinkproject/media/images/logo.png"
+              srcset="https://gianicolajara.github.io/starlinkproject/media/images/logo.webp"
+              aria-label="main logo of the desktop page"
             />
             <img
-              src="https://gianicolajara.github.io/starlinkproject/media/images/logo.png"
+              src="https://gianicolajara.github.io/starlinkproject/media/images/logo.webp"
               alt="starlink's logo"
-              class="h-16"
+              loading="lazy"
+              class="h-12 md:h-16"
             />
           </picture>
 
@@ -216,11 +259,13 @@
               class="flex gap-x-2 bg-black/95 backdrop-blur absolute top-0 left-0 w-full lg:h-full h-screen z-50 flex-col items-center justify-center gap-y-10 transition-all translate-x-[100%] duration-500 lg:!translate-x-0 lg:bg-transparent lg:backdrop-blur-none lg:flex-row lg:relative lg:transition-none"
               aria-label="menu"
               id="menu"
+              role="menu"
             >
               <button
                 class="z-50 absolute right-0 top-0 m-5 lg:hidden block"
                 id="close-menu"
                 aria-label="menu icon close"
+                role="button"
               >
                 <i
                   class="fa fa-close text-white cursor-pointer p-3"
@@ -260,6 +305,7 @@
                   id="dark-mode-button"
                   class="hover:bg-white/20 hover:backdrop-blur rounded-full transition-all w-10 h-10 flex-grow flex-shrink-0"
                   aria-label="button dark mode"
+                  role="button"
                 >
                   <i
                     class="fa fa-moon-o !text-xl !text-white cursor-pointer"
@@ -277,6 +323,7 @@
                 id="open-menu"
                 class="hover:bg-white/20 hover:backdrop-blur rounded-full transition-all block lg:hidden w-10 h-10"
                 aria-label="icon menu open"
+                role="button"
               >
                 <i
                   class="fa fa-bars !text-xl !text-white cursor-pointer"
@@ -360,7 +407,7 @@
               id="installation-container-video"
             >
               <img
-                src="https://gianicolajara.github.io/starlinkproject/media/images/installation.jpg"
+                src="https://gianicolajara.github.io/starlinkproject/media/images/installation.webp"
                 alt="video about installation starlink modem"
                 class="object-cover w-full h-full block"
               />
@@ -396,10 +443,10 @@
                 />
                 <source
                   media="(min-width: 1024)"
-                  srcset="https://gianicolajara.github.io/starlinkproject/media/images/logo.png"
+                  srcset="/media/images/logo.png"
                 />
                 <img
-                  src="https://gianicolajara.github.io/starlinkproject/media/images/logo.png"
+                  src="/media/images/logo.png"
                   alt="starlink's logo"
                   class="h-16"
                 />
@@ -444,6 +491,7 @@
                   id="email"
                   placeholder="Email"
                   required
+                  aria-required="true"
                   class="rounded-lg px-2 bg-neutral-700 text-neutral-300 w-full"
                 />
                 <datalist id="email">
@@ -451,6 +499,8 @@
                 </datalist>
                 <button
                   type="submit"
+                  role="button"
+                  aria-label="submit button for newsletter"
                   class="bg-white p-2 rounded-lg font-bold hover:bg-black hover:text-white transition-all active:scale-95"
                 >
                   Subscribe
@@ -468,6 +518,7 @@
               <a
                 href="https://github.com/gianicolajara"
                 target="_blank"
+                aria-label="link to my personal page"
                 class="hover:text-blue-600 hover:underline"
                 >Gianicola Jara</a
               >
