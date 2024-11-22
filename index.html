@@ -124,7 +124,6 @@
           </p>
           <ul
             class="list-disc p-0 m-0 list-inside flex flex-col gap-y-2 dark:text-neutral-400"
-            role="listitem"
             id="price-element-list"
           ></ul>
         </div>
@@ -217,18 +216,17 @@
           class="fixed top-0 left-0 w-full h-20 flex justify-between items-center px-4 lg:px-10 z-50 transition-all"
           id="nav-menu"
           aria-label="nav menu"
+          role="menu"
         >
           <!-- logo -->
           <picture aria-label="starlink's logo">
             <source
               media="(max-width: 768px)"
               srcset="https://gianicolajara.github.io/starlinkproject/media/svg/logo-phone.svg"
-              aria-label="main logo of the website for phones"
             />
             <source
               media="(min-width: 768px)"
               srcset="https://gianicolajara.github.io/starlinkproject/media/images/logo.webp"
-              aria-label="main logo of the desktop page"
             />
             <img
               src="https://gianicolajara.github.io/starlinkproject/media/images/logo.webp"
@@ -257,9 +255,7 @@
             </div>
             <ul
               class="flex gap-x-2 bg-black/95 backdrop-blur absolute top-0 left-0 w-full lg:h-full h-screen z-50 flex-col items-center justify-center gap-y-10 transition-all translate-x-[100%] duration-500 lg:!translate-x-0 lg:bg-transparent lg:backdrop-blur-none lg:flex-row lg:relative lg:transition-none"
-              aria-label="menu"
               id="menu"
-              role="menu"
             >
               <button
                 class="z-50 absolute right-0 top-0 m-5 lg:hidden block"
