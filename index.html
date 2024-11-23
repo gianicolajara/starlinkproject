@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="description" content="website for UNET's full-stack course" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Gianicola Jara Panichella" />
+    <meta name="title" content="STARLINK UNET PROJECT" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      property="og:url"
+      content="https://gianicolajara.github.io/starlinkproject"
+    />
+    <meta
+      property="og:image"
+      content="https://gianicolajara.github.io/starlinkproject/media/images/heroe-phone.webp"
+    />
+    <meta
+      property="og:description"
+      content="website for UNET's full-stack course"
+    />
+    <meta property="og:title" content="STARLINK UNET PROJECT" />
+    <meta property="og:site_name" content="Starlink" />
+    <meta
+      property="og:see_also"
+      content="https://gianicolajara.github.io/starlinkproject"
+    />
+    <meta name="twitter:card" content="website for UNET's full-stack course" />
+    <meta
+      name="twitter:url"
+      content="https://gianicolajara.github.io/starlinkproject"
+    />
+    <meta name="twitter:title" content="STARLINK UNET PROJECT" />
+    <meta
+      name="twitter:description"
+      content="website for UNET's full-stack course"
+    />
+    <meta
+      name="twitter:image"
+      content="https://gianicolajara.github.io/starlinkproject/media/images/heroe-phone.webp"
+    />
+    <title>Starlink UNET Project</title>
+    <link href="./src/styles/global-styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+      async
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      async
+    />
+    <link rel="icon" type="image/x-icon" href="/media/favicon.ico" />
+  </head>
+  <body class="dark:bg-neutral-950">
+    <!--templates-->
+    <template id="product-template">
+      <article
+        class="bg-no-repeat bg-center bg-cover rounded-lg overflow-hidden lg:hover:shadow-lg lg:hover:scale-105 transition-all relative group lg:cursor-pointer h-72 lg:h-full"
+        id="article-product"
+      >
+        <div
+          class="w-full h-full absolute bg-white/50 transition-all group-hover:bg-transparent hidden lg:flex dark:bg-black/30"
+          id="bg-product"
+        ></div>
+        <header
+          class="absolute lg:group-hover:top-5 lg:top-[-100px] z-[5] transition-all px-5 pt-5 lg:pt-0"
+          id="header-product"
+        >
+          <p class="text-white font-bold text-4xl m-0 p-0" id="title-product">
+            {{title}}
+          </p>
+          <small class="text-white/70 m-0 p-0" id="description-product"
+            >{{description}}</small
+          >
+        </header>
+      </article>
+    </template>
+
+    <template id="button-text-icon-template">
+      <button
+        class="bg-black h-10 rounded-lg flex flex-row gap-x-2 items-center justify-center px-4 hover:bg-white group transition-all w-max"
+        id="button-text-icon"
+        role="button"
+      >
+        <p
+          class="text-white group-hover:text-black font-bold"
+          id="button-text-icon-text"
+        ></p>
+        <i
+          class="!text-xl !text-white group-hover:!text-black"
+          id="button-text-icon-icon"
+        ></i>
+      </button>
+    </template>
+
+    <template id="price-element-template">
+      <article
+        class="grid grid-cols-1 grid-rows-[auto,_1fr] lg:grid-cols-2 lg:grid-rows-1 gap-x-10 gap-y-5"
+      >
+        <div
+          class="w-full h-full rounded-lg overflow-hidden shadow"
+          id="price-element-img-container"
+        >
+          <img
+            src="/media/images/middle.webp"
+            loading="lazy"
+            id="price-element-img"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="flex flex-col lg:justify-center order-3 lg:order-1">
+          <header class="mb-2">
+            <h3
+              class="text-xl font-bold dark:text-white"
+              id="price-element-title"
+            >
+              {{title}}
+            </h3>
+          </header>
+          <p class="mb-2 dark:text-neutral-400" id="price-element-description">
+            {{description}}
+          </p>
+          <ul
+            class="list-disc p-0 m-0 list-inside flex flex-col gap-y-2 dark:text-neutral-400"
+            id="price-element-list"
+          ></ul>
+        </div>
+      </article>
+    </template>
+
+    <template id="order-now-form-template">
+      <div class="flex flex-col gap-y-2 w-full h-full p-5">
+        <header>
+          <h3 class="text-2xl font-bold dark:text-white">Order Now</h3>
+        </header>
+        <form id="order-now-form" class="flex flex-col gap-y-2 w-full h-full">
+          <input
+            type="Address"
+            name="address"
+            placeholder="Address"
+            required
+            class="rounded-lg py-2 px-4 border-2 border-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:border-neutral-500"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            class="rounded-lg py-2 px-4 border-2 border-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:border-neutral-500"
+          />
+          <button
+            type="submit"
+            role="button"
+            class="dark:text-black dark:bg-white p-2 rounded-lg font-bold dark:hover:bg-black dark:hover:text-white transition-all active:scale-95 bg-black hover:text-black hover:bg-white text-white border-2 border-black"
+          >
+            Send Information
+          </button>
+        </form>
+      </div>
+    </template>
+    <!-- fin templates -->
+
+    <main>
+      <!-- modal multiuse -->
+      <aside
+        id="modal"
+        class="z-[9999999] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden fixed"
+      >
+        <button
+          class="absolute right-0 top-0 m-5"
+          id="close-modal"
+          aria-label="menu icon close"
+          role="button"
+        >
+          <i
+            class="fa fa-close text-white cursor-pointer p-3"
+            style="font-size: 25px"
+            aria-label="menu icon close"
+          ></i>
+        </button>
+      </aside>
+
+      <!--heroe section-->
+      <section
+        class="w-full lg:h-[90vh] h-screen relative bg-[url('/media/images/heroe-phone.webp')] bg-center bg-cover bg-no-repeat lg:bg-none flex flex-col justify-between z-10"
+        aria-label="page's heroe"
+      >
+        <div
+          class="absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-60%] z-30 text-center transition-all duration-500"
+          id="title"
+        >
+          <h1
+            class="text-white font-bold text-5xl lg:text-6xl"
+            aria-label="main title"
+          >
+            HIGH-SPEED INTERNET AROUND THE WORLD
+          </h1>
+        </div>
+        <!-- heroe video only for desktop -->
+        <video
+          aria-label="a starlink's video"
+          autoplay="true"
+          muted="true"
+          loop="true"
+          class="w-full h-full object-cover absolute top-0 left-0 hidden lg:block"
+          id="heroe-video"
+        >
+          <source src="/media/heroe.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- menu -->
+        <nav
+          class="fixed top-0 left-0 w-full h-20 flex justify-between items-center px-4 lg:px-10 z-50 transition-all"
+          id="nav-menu"
+          aria-label="nav menu"
+          role="menu"
+        >
+          <!-- logo -->
+          <picture aria-label="starlink's logo">
+            <source
+              media="(max-width: 768px)"
+              srcset="/media/svg/logo-phone.svg"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="/media/images/logo.webp"
+            />
+            <img
+              src="/media/images/logo.webp"
+              alt="starlink's logo"
+              aria-label="starlink's logo"
+              loading="lazy"
+              class="h-12 md:h-16"
+            />
+          </picture>
+
+          <!-- menu items  -->
+          <div class="flex items-center w-max" aria-label="menu container">
+            <!-- weather -->
+            <div
+              class="md:gap-x-2 md:items-center md:justify-center hidden md:flex w-full"
+              id="weather-container"
+            >
+              <p
+                class="text-white font-bold inline text-xs whitespace-nowrap"
+                id="weather-city"
+              ></p>
+              <p
+                class="text-white text-xs whitespace-nowrap"
+                id="weather-temperature"
+              ></p>
+            </div>
+            <ul
+              class="flex gap-x-2 bg-black/95 backdrop-blur absolute top-0 left-0 w-full lg:h-full h-screen z-50 flex-col items-center justify-center gap-y-10 transition-all translate-x-[100%] duration-500 lg:!translate-x-0 lg:bg-transparent lg:backdrop-blur-none lg:flex-row lg:relative lg:transition-none"
+              id="menu"
+              role="list"
+            >
+              <button
+                class="z-50 absolute right-0 top-0 m-5 lg:hidden block"
+                id="close-menu"
+                aria-label="menu icon close"
+                role="button"
+              >
+                <i
+                  class="fa fa-close text-white cursor-pointer p-3"
+                  style="font-size: 25px"
+                  aria-label="menu icon close"
+                ></i>
+              </button>
+              <li aria-label="menu item about" role="listitem">
+                <a
+                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-sm hover:underline hover:underline-offset-4"
+                  href="#about"
+                  id="menu-item"
+                  >ABOUT</a
+                >
+              </li>
+              <li aria-label="menu item prices" role="listitem">
+                <a
+                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-sm hover:underline hover:underline-offset-4"
+                  href="#prices"
+                  id="menu-item"
+                  >PRICES</a
+                >
+              </li>
+              <li aria-label="menu item installation" role="listitem">
+                <a
+                  class="hover:text-white p-2 text-white/50 hover:cursor-pointer transition-all text-2xl lg:text-sm hover:underline hover:underline-offset-4"
+                  href="#installation"
+                  id="menu-item"
+                  >INSTALLATION</a
+                >
+              </li>
+            </ul>
+            <!--icon menu-->
+            <div class="flex gap-x-1">
+              <div class="flex gap-x-1 items-center">
+                <button
+                  id="dark-mode-button"
+                  class="hover:bg-white/20 hover:backdrop-blur rounded-full transition-all w-10 h-10 flex-grow flex-shrink-0"
+                  aria-label="button dark mode"
+                  role="button"
+                >
+                  <i
+                    class="fa fa-moon-o !text-xl !text-white cursor-pointer"
+                    id="dark-mode-icon"
+                    aria-label="dark mode icon"
+                  ></i>
+                </button>
+                <small
+                  aria-label="dark mode text text-white"
+                  id="dark-mode-text"
+                  class="text-white whitespace-nowrap text-xso"
+                ></small>
+              </div>
+              <button
+                id="open-menu"
+                class="hover:bg-white/20 hover:backdrop-blur rounded-full transition-all block lg:hidden w-10 h-10"
+                aria-label="icon menu open"
+                role="button"
+              >
+                <i
+                  class="fa fa-bars !text-xl !text-white cursor-pointer"
+                  aria-label="menu icon"
+                ></i>
+              </button>
+            </div>
+          </div>
+        </nav>
+        <!-- box with your location -->
+        <div
+          class="absolute bottom-0 self-center mb-10 p-4 backdrop-blur bg-white/10 rounded-lg z-20 shadow mx-4"
+        >
+          <div
+            class="w-full h-full flex flex-col gap-y-2 items-center z-20"
+            aria-label="box to order the product in case it is in a valid country"
+            id="geo-data"
+          ></div>
+        </div>
+      </section>
+      <!-- about -->
+      <section class="w-full py-20" id="about">
+        <div class="max-w-[1100px] m-auto px-5" aria-label="wrapper">
+          <div
+            class="w-full h-min lg:h-96 grid lg:grid-cols-3 lg:grid-rows-1 gap-x-4 grid-rows-3 grid-cols-1 gap-y-5 lg:gap-y-0"
+            id="list-products-container"
+          ></div>
+        </div>
+      </section>
+      <!-- prices -->
+      <section
+        class="w-full py-20 bg-neutral-100 dark:bg-neutral-900"
+        id="prices"
+      >
+        <div class="max-w-[1100px] m-auto px-5" aria-label="wrapper">
+          <header class="mb-5">
+            <h2 class="text-4xl font-bold dark:text-white">PRICES</h2>
+          </header>
+
+          <div
+            class="relative border-2 dark:border-neutral-600 rounded-lg shadow mb-7 overflow-x-auto"
+          >
+            <table class="w-full caption-bottom">
+              <caption
+                class="text-sm p-2 text-left dark:text-neutral-300 dark:bg-neutral-600 bg-neutral-200"
+              >
+                *Our prices are subject to change depending on the region.
+              </caption>
+              <thead
+                class="p-5 uppercase border-b-2 bg-gray-200 dark:bg-neutral-600 dark:border-neutral-500 text-sm w-full"
+              >
+                <tr class="w-full">
+                  <th class="px-6 py-3 dark:text-neutral-400">Name Package</th>
+                  <th class="px-6 py-3 dark:text-neutral-400">Speed</th>
+                  <th class="px-6 py-3 dark:text-neutral-400">Price</th>
+                </tr>
+              </thead>
+              <tbody class="" id="prices-table-body"></tbody>
+            </table>
+          </div>
+
+          <div
+            class="w-full grid grid-cols-1 grid-rows-[repeat(3,_auto)] gap-y-7"
+            id="prices-elements-container"
+          ></div>
+        </div>
+      </section>
+
+      <!-- installation -->
+      <section class="w-full py-20" id="installation">
+        <div class="max-w-[1100px] m-auto px-5" aria-label="wrapper">
+          <header class="mb-5">
+            <h2 class="text-4xl font-bold dark:text-white">INSTALLATION</h2>
+          </header>
+
+          <article
+            class="grid grid-cols-1 grid-rows-[1fr,_auto] lg:grid-cols-[2fr,_1fr] lg:grid-rows-1 lg:gap-x-10 gap-y-5"
+          >
+            <div
+              class="w-full h-full rounded-lg overflow-hidden relative flex cursor-pointer transition-all lg:hover:scale-105"
+              id="installation-container-video"
+            >
+              <img
+                src="/media/images/installation.webp"
+                alt="video about installation starlink modem"
+                class="object-cover w-full h-full block"
+              />
+              <i
+                class="fa fa-play !text-white !text-5xl absolute z-[5] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              ></i>
+            </div>
+            <div class="w-full h-full flex flex-col justify-center">
+              <header class="mb-4">
+                <h3 class="text-3xl font-bold dark:text-white">
+                  Quick Start Video
+                </h3>
+              </header>
+              <p class="dark:text-neutral-400">
+                A simple tutorial to start using your starlink system, remember
+                to have a clear sky to be able to do the installation.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="w-full bg-neutral-800 py-10">
+        <div class="max-w-[1100px] m-auto px-5" aria-label="wrapper">
+          <div
+            class="w-full grid grid-rows-[repeat(3,_auto)] grid-cols-1 lg:grid-cols-3 lg:grid-rows-1 gap-y-10"
+          >
+            <div class="w-full flex justify-center lg:justify-start">
+              <picture aria-label="starlink's logo">
+                <source
+                  media="(max-width: 1024px)"
+                  srcset="/media/svg/logo-phone.svg"
+                />
+                <source
+                  media="(min-width: 1024)"
+                  srcset="/media/images/logo.webp"
+                />
+                <img
+                  src="/media/images/logo.webp"
+                  alt="starlink's logo"
+                  loading="lazy"
+                  class="h-16"
+                />
+              </picture>
+            </div>
+            <div class="w-full flex-col flex items-center lg:items-start">
+              <header>
+                <h4 class="text-white">Links</h4>
+              </header>
+              <ul class="">
+                <li class="lg:text-left text-center">
+                  <a
+                    href="#about"
+                    class="text-neutral-400 hover:text-white transition-all hover:underline text-sm"
+                    >About</a
+                  >
+                </li>
+                <li class="lg:text-left text-center">
+                  <a
+                    href="#prices"
+                    class="text-neutral-400 hover:text-white transition-all hover:underline text-sm"
+                    >Prices</a
+                  >
+                </li>
+                <li class="lg:text-left text-center">
+                  <a
+                    href="#installation"
+                    class="text-neutral-400 hover:text-white transition-all hover:underline text-sm"
+                    >Installation</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="w-full flex flex-col lg:items-start items-center">
+              <header class="mb-2">
+                <h4 class="text-white">Newsletter</h4>
+              </header>
+              <form id="form-newsletter" class="w-full flex gap-x-1 max-w-80">
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  required
+                  aria-required="true"
+                  class="rounded-lg px-2 bg-neutral-700 text-neutral-300 w-full"
+                />
+                <datalist id="email">
+                  <option value="1">gianicolajara@gmail.com</option>
+                </datalist>
+                <button
+                  type="submit"
+                  role="button"
+                  aria-label="submit button for newsletter"
+                  class="bg-white p-2 rounded-lg font-bold hover:bg-black hover:text-white transition-all active:scale-95"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+          <hr class="border-0 border-t-2 border-neutral-700 my-4" />
+          <div>
+            <p class="text-neutral-400 text-center lg:text-left">
+              This is an educational site
+            </p>
+            <p class="text-neutral-400 text-center lg:text-left">
+              Created by
+              <a
+                href="https://github.com/gianicolajara"
+                target="_blank"
+                aria-label="link to my personal page"
+                class="hover:text-blue-600 hover:underline"
+                >Gianicola Jara</a
+              >
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
