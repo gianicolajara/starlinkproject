@@ -1,14 +1,12 @@
 //api about user's address
 
+import { fetchTimeout } from "../lib/fetchTimeout";
+
 export const nominatimService = async (lat, long) => {
-  const res = await fetch(
-    `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${long}`,
-    {
-      headers: {
-        "content-type": "application/json",
-      },
-    }
-  );
+  const res = await fetchTimeout({
+    url: `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${long}`,
+    time: 10000,
+  });
 
   if (!res.ok) {
     throw new Error("Error getting data from nominatim service");
