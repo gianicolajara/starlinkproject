@@ -39,6 +39,7 @@ export const weatherHelper = (store, toast) => {
       store.save({
         key: storageKeys.weather,
         data: weatherData,
+        expireTime: 3600000, //1 day
       });
     } catch (error) {
       toast.errorToast(`Error getting weather data: ${error}`);
